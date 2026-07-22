@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>HK Workshop</title>
+    <meta
+      name="description"
+      content="HK Workshop — AI, Web Development, Automation and premium digital experiences by Harsh Kukreja."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3134707331240871" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Aggressively remove the Spline watermark from the shadow DOM
+      setInterval(() => {
+        document.querySelectorAll('spline-viewer').forEach(viewer => {
+          if (viewer.shadowRoot) {
+            const logo = viewer.shadowRoot.querySelector('#logo');
+            if (logo) logo.remove();
+          }
+        });
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-3d-tech {
+    font-family: 'Orbitron', sans-serif;
+    color: #1e293b;
+    text-shadow: 
+      1px 1px 0px #e2e8f0,
+      2px 2px 0px #cbd5e1,
+      3px 3px 0px #94a3b8,
+      4px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-textMain font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(252, 233, 122, 0.2), transparent 20%),
+    radial-gradient(circle at 88% 18%, rgba(254, 240, 138, 0.15), transparent 20%),
+    radial-gradient(circle at 50% 95%, rgba(252, 233, 122, 0.12), transparent 24%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(252, 233, 122, 0.35);
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8;
+}
+
+.glass-panel {
+  @apply border border-white/60 bg-white/55 backdrop-blur-2xl shadow-glass;
+}
+
+.soft-card {
+  @apply border border-white/70 bg-white/70 backdrop-blur-xl shadow-soft;
+}
+
+.section-space {
+  @apply py-20 md:py-28;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #d4b455 0%, #eab308 55%, #fde047 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mask-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7) 0.6px, transparent 0.8px),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,0.7) 0.6px, transparent 0.8px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.7) 0.6px, transparent 0.8px);
+  background-size: 22px 22px;
+}
+
+.hero-shadow {
+  box-shadow:
+    0 40px 90px rgba(180, 160, 120, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    inset 0 -1px 0 rgba(255,255,255,0.6);
+}
+
+.robot-stage-shadow {
+  box-shadow:
+    0 30px 80px rgba(252, 233, 122, 0.25),
+    0 10px 30px rgba(254, 240, 138, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.nav-blur {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+@keyframes crumple {
+  0% { transform: scale(1) translate(0px, 0px); }
+  25% { transform: scale(1.01) translate(-2px, 2px); }
+  50% { transform: scale(1) translate(2px, -2px); }
+  75% { transform: scale(1.02) translate(-2px, -2px); }
+  100% { transform: scale(1) translate(0px, 0px); }
+}
+
+.animate-paper {
+  animation: crumple 3.5s steps(4, end) infinite;
+}
+
+/* Hide Spline Viewer Watermark */
+spline-viewer::part(logo) {
+  display: none !important;
+}
+
+#logo {
+  display: none !important;
+}
